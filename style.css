@@ -3,7 +3,7 @@
   :root { --bg: #141a2e; --fg: #e8ebf5; --muted: #a3abc6; --accent: #8fb0ff; --card: #1d2440; --line: #2c3557; }
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
 main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
 header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
 header img { width: 64px; height: 64px; border-radius: 50%; }
