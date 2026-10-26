@@ -3,45 +3,199 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Schedule Bot</title>
+<title>Schedule Bot – 信裡的日期，不再漏掉</title>
+<meta name="description" content="Schedule Bot 把信裡的行程找出來，在 Telegram 問過你，你同意了才放進 Google 行事曆。">
 <link rel="icon" href="../logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<main>
-  <p class="muted" style="text-align:right;margin:0"><a href="../index.html">English</a> · 中文</p>
-  <header>
-    <img src="../logo.svg" alt="Schedule Bot 標誌">
-    <h1>Schedule Bot</h1>
-  </header>
-
-  <p><strong>Schedule Bot 會把藏在信裡的日期找出來，幫你放進行事曆，但一定要你說好才會放。</strong></p>
-  <p>家長每天收到一堆學校通知、社團報名、活動提醒，日期很容易漏掉。
-     Schedule Bot 會讀你指定的寄件者寄來的信，把裡面的行程挑出來，每天在 Telegram 傳一則簡短的摘要給你。</p>
-
-  <div class="card">
-    <h2 style="margin-top:0">怎麼運作</h2>
-    <ol>
-      <li><strong>讀信：</strong>每天早上看你的 Gmail（只讀），找你追蹤的寄件者寄來的新信。</li>
-      <li><strong>找行程：</strong>AI 把行程挑出來（日期、時間、標題），再由第二道檢查逐筆對照原信確認。</li>
-      <li><strong>問你：</strong>你會在 Telegram 收到每筆行程，附兩個按鈕：「寫入」或「略過」。</li>
-      <li><strong>寫入：</strong>只有你按了「寫入」，才會寫進你的 Google 行事曆。按錯了，一鍵就能撤銷。</li>
-    </ol>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="../logo.svg" alt="">Schedule Bot</a>
+    <nav class="nav-links">
+      <a class="hide-sm" href="#how">怎麼運作</a>
+      <a class="hide-sm" href="#privacy">隱私</a>
+      <a class="hide-sm" href="#faq">常見問題</a>
+      <a class="lang" href="../index.html">English</a>
+    </nav>
   </div>
+</header>
 
-  <h2>絕對不會做的事</h2>
-  <ul>
-    <li>寄信、刪信或修改你的信。Gmail 權限只有「讀取」。</li>
-    <li>你沒有按，就把東西寫進你的行事曆。</li>
-    <li>拿你的資料打廣告，或賣給任何人。</li>
-  </ul>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">給忙碌的家長 · 小規模測試中</span>
+        <h1>信裡的日期，<em>再也不會漏掉</em>。</h1>
+        <p class="lead">Schedule Bot 會讀學校通知和報名信件，把行程挑出來，先在 Telegram 問過你，才放進你的 Google 行事曆。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:nanoclawmi@gmail.com?subject=Schedule%20Bot%20%E7%94%B3%E8%AB%8B%E8%A9%A6%E7%94%A8">申請試用</a>
+          <a class="btn btn-ghost" href="#how">看看怎麼運作</a>
+        </div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="chat-head"><img src="../logo.svg" alt=""><div>Schedule Bot<small>bot</small></div></div>
+          <div class="bubble">☀️ <span class="t">早安！</span><br>今天從信裡找到 2 筆新行程。</div>
+          <div class="bubble">
+            <span class="t">📅 校外教學</span><br>
+            11/14（五）08:00–15:00<br>
+            <span class="m">來源：五年級班級通知</span>
+          </div>
+          <div class="kb"><span>✅ 寫入</span><span>⏭ 略過</span></div>
+          <div class="bubble">✅ 已寫入行事曆：<span class="t">游泳課報名截止</span></div>
+          <div class="kb" style="grid-template-columns:1fr"><span>↩️ 撤銷</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>目前狀態</h2>
-  <p>Schedule Bot 是一個獨立的小型專案，目前只開放少數使用者私下測試。</p>
+  <section id="how" class="soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>怎麼運作</h2>
+        <p>每天早上四個步驟，行事曆的決定權一直在你手上。</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="icon i-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div class="step" style="margin-top:14px">步驟 1</div>
+          <h3 style="margin-top:2px">讀信</h3>
+          <p>每天早上看你的 Gmail（只讀），找你追蹤的寄件者寄來的新信。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <div class="step" style="margin-top:14px">步驟 2</div>
+          <h3 style="margin-top:2px">找行程</h3>
+          <p>AI 把每個行程挑出來，再由第二道檢查對照原信確認。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="step" style="margin-top:14px">步驟 3</div>
+          <h3 style="margin-top:2px">問你</h3>
+          <p>在 Telegram 收到每筆行程，附兩個按鈕：「寫入」或「略過」。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="m9 15 2 2 4-4"/></svg></div>
+          <div class="step" style="margin-top:14px">步驟 4</div>
+          <h3 style="margin-top:2px">寫入</h3>
+          <p>你按了「寫入」才會放進 Google 行事曆。改變主意？一鍵撤銷。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p><a href="privacy.html">隱私權政策</a></p>
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>照著家庭真實收到訊息的方式設計</h2>
+        <p>學校通知、社團報名、各種提醒，格式五花八門。Schedule Bot 幫你集中在一個地方處理。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon i-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+          <h3>連結裡的文件也會看</h3>
+          <p>信裡附了 Google 文件或試算表（例如報名表），也會一起讀。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+          <h3>什麼都能轉傳</h3>
+          <p>群組訊息或截圖裡有日期？轉傳給機器人，就會變成一筆待你確認的行程。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+          <h3>每天一則簡短摘要</h3>
+          <p>早上一則訊息：有什麼新的、什麼快到了、什麼還等你回答。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>聯絡：<a href="mailto:nanoclawmi@gmail.com">nanoclawmi@gmail.com</a></footer>
+  <section id="privacy" class="soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>你的信箱很私人，我們也這樣對待它。</h2>
+        <p>隱私從一開始就設計進去，不是事後補上。<a href="privacy.html">閱讀完整隱私權政策 →</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon i-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>信箱只能讀</h3>
+          <p>絕對不能寄信、刪信或修改你的信。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></div>
+          <h3>不保存信件</h3>
+          <p>信件讀完、找出行程就丟掉，只留下行程本身的資訊。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>你沒按，就不寫</h3>
+          <p>每個行程都要你同意，才會放進行事曆。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3>權杖加密保存</h3>
+          <p>Google 帳號的存取權杖加密保存，只用在說明過的功能。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg></div>
+          <h3>不打廣告、不賣資料</h3>
+          <p>你的資料絕不用來打廣告，也不賣給任何人。</p>
+        </div>
+        <div class="card">
+          <div class="icon i-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div>
+          <h3>隨時可以離開</h3>
+          <p>到 Google 帳號設定取消授權，並請我們刪除你的資料。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head"><h2>常見問題</h2></div>
+      <div class="faq">
+        <details>
+          <summary>它會讀我所有的信嗎？</summary>
+          <p>只會從你選擇追蹤的寄件者（例如孩子的學校）寄來的信裡找行程。</p>
+        </details>
+        <details>
+          <summary>它會自己把東西寫進我的行事曆嗎？</summary>
+          <p>不會。每個行程都會先在 Telegram 等你確認，你按「寫入」之前什麼都不會寫。</p>
+        </details>
+        <details>
+          <summary>日期抓錯怎麼辦？</summary>
+          <p>每個行程都會再對照原信檢查一次，而且寫入前你都會看到。萬一還是錯了，按「撤銷」就會刪掉。</p>
+        </details>
+        <details>
+          <summary>為什麼用 Telegram？</summary>
+          <p>Telegram 可以在訊息裡直接放按鈕，確認一個行程只要按一下。</p>
+        </details>
+        <details>
+          <summary>怎麼申請使用？</summary>
+          <p>Schedule Bot 目前只開放少數使用者測試。寫信給我們申請。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap" style="text-align:center">
+      <h2 style="font-size:clamp(26px,3.4vw,34px);margin:0 0 10px">別再翻信箱找日期了。</h2>
+      <p style="color:var(--muted);margin:0 0 24px">加入測試，讓 Schedule Bot 幫你記。</p>
+      <a class="btn btn-primary" href="mailto:nanoclawmi@gmail.com?subject=Schedule%20Bot%20%E7%94%B3%E8%AB%8B%E8%A9%A6%E7%94%A8">申請試用</a>
+    </div>
+  </section>
 </main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Schedule Bot · <a href="mailto:nanoclawmi@gmail.com">nanoclawmi@gmail.com</a></div>
+    <nav><a href="privacy.html">隱私權政策</a><a href="../index.html">English</a></nav>
+  </div>
+</footer>
 </body>
 </html>
