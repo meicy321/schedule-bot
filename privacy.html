@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy</title>
+<link rel="icon" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <img src="logo.svg" alt="Schedule Bot logo">
+    <h1>Schedule Bot Privacy Policy</h1>
+  </header>
+  <p class="muted">Effective date: October 27, 2026</p>
+
+  <p>This policy explains what data Schedule Bot accesses, why, where it is kept, and how you can delete it.
+     Schedule Bot is run by an independent developer. Contact: <a href="mailto:nanoclawmi@gmail.com">nanoclawmi@gmail.com</a>.</p>
+
+  <h2>1. Data we access</h2>
+  <table>
+    <tr><th>Source</th><th>Access</th><th>Why</th></tr>
+    <tr><td>Gmail</td><td>Read-only (<code>gmail.readonly</code>)</td><td>To find event dates in emails from the senders you choose to track.</td></tr>
+    <tr><td>Google Calendar</td><td>Create, edit and delete events (<code>calendar.events</code>)</td><td>To add an event after you approve it, to avoid duplicates, and to undo an event when you ask.</td></tr>
+    <tr><td>Google Drive</td><td>Read-only (<code>drive.readonly</code>)</td><td>To read Google Docs or Sheets that are linked inside a tracked email (for example, a school sign-up sheet).</td></tr>
+    <tr><td>Telegram</td><td>Messages you send to the bot</td><td>To send you summaries and receive your choices (Add / Skip / Undo), and to read text or screenshots you forward to the bot.</td></tr>
+  </table>
+  <p>Optional sources, only if you turn them on: TimeTree (to check your existing family calendar) and Notion (only pages you share with the integration).</p>
+
+  <h2>2. What we store</h2>
+  <ul>
+    <li><strong>We do not store your emails.</strong> Email content is read, used to find events, and then discarded.</li>
+    <li>We store <strong>event records</strong>: title, date and time, location, which email it came from (a message ID), a short quote of up to 100 characters as evidence, and your decision (added, skipped, undone).</li>
+    <li>We store technical logs containing message IDs and at most the first 30 characters of an email subject. Logs never contain full email text, passwords or access tokens.</li>
+    <li>Access tokens for your Google account are stored encrypted and are used only to perform the actions above.</li>
+  </ul>
+
+  <h2>3. Who processes your data</h2>
+  <table>
+    <tr><th>Service</th><th>What it does</th></tr>
+    <tr><td>Anthropic (Claude API)</td><td>Reads tracked emails to find and verify events. Under Anthropic's commercial terms, this data is not used to train their models.</td></tr>
+    <tr><td>Amazon Web Services (Taipei region)</td><td>Stores event records and encrypted tokens, and runs the bot.</td></tr>
+    <tr><td>Telegram</td><td>Delivers messages between you and the bot.</td></tr>
+    <tr><td>Google</td><td>Provides Gmail, Calendar and Drive.</td></tr>
+  </table>
+  <p>We do not sell your data, share it with advertisers, or use it for advertising. No person reads your emails, except when you ask for help with a specific problem and give permission, or when required by law.</p>
+
+  <h2>4. Google API Services User Data Policy</h2>
+  <p>Schedule Bot's use and transfer of information received from Google APIs to any other app will adhere to the
+     <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+     including the Limited Use requirements. Data from Google APIs is used only to provide the features described here,
+     and is not used to develop, improve or train generalized AI or machine-learning models.</p>
+
+  <h2>5. Keeping and deleting your data</h2>
+  <ul>
+    <li>Event records are kept while you use Schedule Bot, so it can avoid adding the same event twice.</li>
+    <li>To delete all your data, email <a href="mailto:nanoclawmi@gmail.com">nanoclawmi@gmail.com</a>. We will delete it within 30 days.</li>
+    <li>You can remove Schedule Bot's access to your Google account at any time at
+        <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+        Events already added to your calendar stay there until you delete them.</li>
+  </ul>
+
+  <h2>6. Children</h2>
+  <p>Schedule Bot is for adults, such as parents managing family schedules. It is not intended for use by children.</p>
+
+  <h2>7. Changes</h2>
+  <p>If this policy changes, we will update the effective date above and tell current users through the bot.</p>
+
+  <footer><a href="index.html">Back to Schedule Bot</a></footer>
+</main>
+</body>
+</html>
